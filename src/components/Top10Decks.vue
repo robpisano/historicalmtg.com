@@ -17,14 +17,9 @@
             </q-item-section>
             <q-item-section>{{ deck.name }}</q-item-section>
             <q-item-section>{{ deck.elo }}</q-item-section>
-            <q-item-section>{{ deck.wins }} - {{ deck.losses }}</q-item-section>
+            <q-item-section v-if="$q.platform.is.desktop && !$q.platform.within.iframe">{{ deck.wins }} - {{ deck.losses }}</q-item-section>
         </q-item>
         </q-list>
-        <q-btn color="primary" clickable
-          type="a"
-          href="standings"
-          style="display: flex; justify-content: center;"
-          label="Full Standings" />
     </div>
 </template>
 
