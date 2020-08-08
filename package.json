@@ -6,7 +6,7 @@
   "author": "Rob Pisano <RobPisanoDev@gmail.com>",
   "private": true,
   "scripts": {
-    "start": "node index.js",
+    "start": "node src/router/index.js",
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0"
   },
