@@ -1,11 +1,12 @@
-const
-  express = require('express'),
-  serveStatic = require('serve-static'),
-  history = require('connect-history-api-fallback'),
-  port = process.env.PORT || 5000
+const express = require('express')
+const path = require('path')
+const history = require('express-history-api-fallback')
+const PORT = process.env.PORT || 5000
 
-const app = express()
+const app = express();
+const root = __dirname + "/public";
 
-app.use(history())
-app.use(serveStatic(__dirname + '/dist/spa'))
-app.listen(port)
+app.use(express.static(root));
+app.use(history('index.html', { root: root }));
+
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
